@@ -1,0 +1,744 @@
+{
+  "uuid": "0cfebafa-9544-4ed4-b7fd-310eda2bfebe",
+  "lastMigration": 27,
+  "name": "Z1 Services",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "routes": [
+    {
+      "uuid": "cd7fca05-040b-4b77-8f40-0b2b2bc51222",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/oauth/token",
+      "responses": [
+        {
+          "uuid": "26f96576-a833-4c50-9d54-9b9b91ac1ea4",
+          "body": "{\"active\":true,\"token_type\":\"bearer\",\"access_token\":\"gBoByJaYAsJgZK4h99f6YhgJs3HeNiEJsKjnt1rZZw8D5BHrDM\",\"user_name\":\"demouser\",\"user_id\":\"FrlaaawoASlWLwLNPWrXS6w\",\"expires_in\":10799}",
+          "latency": 5000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "01e5ca04-45b2-4e44-b4fd-5084f12e970e",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/oauth/token",
+      "responses": [
+        {
+          "uuid": "f8089665-d277-4b7f-8f96-b4be3c6bf6bb",
+          "body": "{\"active\":true,\"token_type\":\"bearer\",\"access_token\":\"gBoByJaYAsJgZK4h99f6YhgJs3HeNiEJsKjnt1rZZw8D5BHrDM\",\"user_name\":\"demouser\",\"user_id\":\"FrlaaawoASlWLwLNPWrXS6w\",\"expires_in\":10799}",
+          "latency": 5000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "1b73554f-b108-4be2-a08f-39a23ed6d07c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/advanced-subject-commands",
+      "responses": [
+        {
+          "uuid": "84297ebe-fa37-4433-b311-f14ab038c8e4",
+          "body": "{\n\"enforceProtectionClassification\": false,\n    \"commands\": [\n        {\n            \"name\": \"Sehr Vertraulich\",\n            \"command\": \"#highConfidental\",\n            \"default\": true\n        },\n        {\n            \"name\": \"Vertraulich\",\n            \"command\": \"#confidential\",\n            \"default\": false\n        },\n        {\n            \"name\": \"Datenschutzkonform\",\n            \"command\": \"#snakeoilProtection\",\n            \"default\": false\n        }\n    ],\n    \"xHeaderName\": \"X-TBoneUserCommand\"\n}",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "0ff7bd7f-acc1-47f5-9294-f50c3694cdc2",
+          "body": "{\"EnforceProtectionClassification\": false, \"XHeaderName\": \"X-TBoneUserCommand\", \"Commands\": [{\"Name\": \"Standard\", \"Command\": \"#none\", \"Default\": false, \"$type\": \"XCommand\"}], \"Failed\": false, \"Reason\": null, \"$type\": \"AdvancedSubjectCommandsResponseModel\"}",
+          "latency": 2000,
+          "statusCode": 200,
+          "label": " (copy)",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "295268e8-df8a-4090-a19e-07bffd7e35bf",
+          "body": "{\n\"enforceProtectionClassification\": false,\n    \"commands\": [\n        {\n            \"name\": \"Sehr Vertraulich\",\n            \"command\": \"!highConfidental\",\n            \"default\": true\n        },\n        {\n            \"name\": \"Vertraulich\",\n            \"command\": \"!confidential\",\n            \"default\": false\n        },\n        {\n            \"name\": \"Datenschutzkonform\",\n            \"command\": \"!verySecure\",\n            \"default\": false\n        }\n    ],\n    \"xHeaderName\": \"X-TBoneUserCommand\"\n}",
+          "latency": 50,
+          "statusCode": 200,
+          "label": " (copy)",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "lang",
+              "value": "de",
+              "operator": "equals",
+              "invert": false
+            }
+          ],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "3a1c2afb-4296-48bb-990e-efa1ea7bb071",
+          "body": "{\n\"enforceProtectionClassification\": false,\n    \"commands\": [\n        {\n            \"name\": \"High Confidential\",\n            \"command\": \"#highConfidental\",\n            \"default\": true\n        },\n        {\n            \"name\": \"Confidential\",\n            \"command\": \"#confidential\",\n            \"default\": false\n        },\n        {\n            \"name\": \"DSGVO certified\",\n            \"command\": \"#verySecure\",\n            \"default\": false\n        }\n    ],\n    \"xHeaderName\": \"X-TBoneUserCommand\"\n}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": " (copy)",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "lang",
+              "value": "en",
+              "operator": "equals",
+              "invert": false
+            }
+          ],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "42a223a4-bcdd-4522-9a27-980802a8ebad",
+          "body": "{\n\"enforceProtectionClassification\": false,\n    \"commands\": [\n        {\n            \"name\": \"High Confidential\",\n            \"command\": \"#highConfidental\",\n            \"default\": true\n        },\n        {\n            \"name\": \"Confidential\",\n            \"command\": \"#confidential\",\n            \"default\": false\n        },\n        {\n            \"name\": \"DSGVO certified\",\n            \"command\": \"#verySecure\",\n            \"default\": false\n        }\n    ],\n    \"xHeaderName\": \"X-TBoneUserCommand\"\n}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": " (copy) (copy)",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "lang",
+              "value": "us",
+              "operator": "equals",
+              "invert": false
+            }
+          ],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "02141110-af4e-4798-8025-2523a16c0e60",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "c3e1b5b5-da71-4d38-97e7-7ca2a346024f",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/v1/security-info",
+      "responses": [
+        {
+          "uuid": "01a97ed6-bdf8-45d4-857e-66879e3ac0eb",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\"],\n    \"security\":\"SMIME\",\n    \"encryptionType\":\"SMIME\"\n  \n}",
+          "latency": 30,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "d913daff-0b93-4f6f-ab72-91348486f393",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\" foo1@bar.com\",\n    \"fingerprintsRecipient\":null,\n    \"security\":\"NONE\",\n    \"encryptionType\":\"NONE\"\n  \n}",
+          "latency": 2,
+          "statusCode": 200,
+          "label": " foo1@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo1@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "07b62f31-e3ae-40f7-bc99-386648fc509b",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"Blocked\",\n    \"encryptionType\":\"Blocked\"\n  \n}",
+          "latency": 10,
+          "statusCode": 200,
+          "label": " foo2@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo2@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "33307b46-3af8-408e-a488-d2b684258b82",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"Internal\",\n    \"encryptionType\":\"Internal\"\n  \n}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": " foo3@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo3@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "cdbe8453-2293-4bf6-a732-180b0dc88bfd",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"PGP\",\n    \"encryptionType\":\"PGP\"\n  \n}",
+          "latency": 100,
+          "statusCode": 200,
+          "label": " foo4@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo4@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "65ea27a5-1bda-4021-ad2d-b82a0686367c",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"SMIME\",\n    \"encryptionType\":\"SMIME\"\n  \n}",
+          "latency": 2000,
+          "statusCode": 200,
+          "label": " foo5@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo5@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "1995abc3-becd-4a12-b5af-a84b19fa0902",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\"],\n    \"security\":\"Blocked\",\n    \"encryptionType\":\"Blocked\"\n  \n}",
+          "latency": 222,
+          "statusCode": 200,
+          "label": " foo6@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "alice@mail.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "a1a34116-2093-47f9-b3b2-a71ded9e042d",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"Internal\",\n    \"encryptionType\":\"Internal\"\n  \n}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": " foo7@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo7@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "7778e0da-234b-4366-8899-82e101484ecb",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"PGP\",\n    \"encryptionType\":\"PGP\"\n  \n}",
+          "latency": 2500,
+          "statusCode": 200,
+          "label": " foo8@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo8@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "f38cb634-4d72-4cbe-9596-a60a3d18a547",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"Blocked\",\n    \"encryptionType\":\"Blocked\"\n  \n}",
+          "latency": 5000,
+          "statusCode": 200,
+          "label": " foo9@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo9@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "29165328-5620-44b2-95a5-d5802fc23730",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"SMIME\",\n    \"encryptionType\":\"SMIME\"\n  \n}",
+          "latency": 10000,
+          "statusCode": 200,
+          "label": " foo10@bar.com",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "recipient",
+              "value": "foo10@bar.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "07fb9e79-8c12-4c62-bc88-581812d25e34",
+          "body": "{\n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"None\",\n    \"encryptionType\":\"None\"\n  \n}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": " (copy) (copy)",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "2b3be0f4-5f14-4b77-8b20-15662ced30ba",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\"],\n    \"security\":\"PgP\",\n    \"encryptionType\":\"PgP\"\n  \n}",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": " (copy) (copy) (copy)",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "bc276672-6862-4584-82d2-1a57037eb442",
+          "body": "{\"sender\":\"hannes@msexch01.bum.rnd.bonelabs.com\",\"recipient\":\"hannes@bonogames.de\",\"security\":\"NO_CERTIFICATE_FOUND\",\"encryptionType\":\"NONE\"}",
+          "latency": 200,
+          "statusCode": 200,
+          "label": " (copy) (copy) (copy) (copy)",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "7b884b8d-a3fe-497d-8210-998f33f56414",
+          "body": "{\n  \n    \"sender\":\"int@bonelabs.com\",\n    \"fingerprintSender\":\"e6383b7e720b215b85c8aedf9c0c4ce1b788356b\",\n    \"recipient\":\"external@google.com\",\n    \"fingerprintsRecipient\":[\"d47ebc447edaa27e4683adfd40628d9887b113e3\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\", \"d47ebc447edaa27e4683adfd40628d9887b113e4\"],\n    \"security\":\"Blocked\",\n    \"encryptionType\":\"Blocked\"\n  \n}",
+          "latency": 600,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "3cb55080-b85e-4233-b054-22193b932935",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/v1/exchange/users/register",
+      "responses": [
+        {
+          "uuid": "84449fa6-c79c-4dc4-8718-dedb4dd9a162",
+          "body": "{}",
+          "latency": 50,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "disableTemplating": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        },
+        {
+          "uuid": "1827c466-b13e-4ba1-9194-a4725f970874",
+          "body": "{}",
+          "latency": 2000,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "2be2c824-681d-4175-99fb-70196c54e9d3",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/licenses",
+      "responses": [
+        {
+          "uuid": "886fc071-2c6f-4249-821d-404845c60d4a",
+          "body": "{\n  \"licenses\":\n  [\n    {\n      \"name\": \"SecureMail\"\n    },\n    {\n      \"name\": \"SecureHub\"\n    }\n  ]\n}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "ba3ff1ad-3460-4ca8-a500-7a94efc68b0f",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "alert",
+      "responses": [
+        {
+          "uuid": "9aae5aa0-1001-4ef5-8a4d-576ce63075e6",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "192.168.3.12:3128",
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "proxyRemovePrefix": false,
+  "hostname": "",
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "data": [],
+  "folders": [],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "cd7fca05-040b-4b77-8f40-0b2b2bc51222"
+    },
+    {
+      "type": "route",
+      "uuid": "01e5ca04-45b2-4e44-b4fd-5084f12e970e"
+    },
+    {
+      "type": "route",
+      "uuid": "1b73554f-b108-4be2-a08f-39a23ed6d07c"
+    },
+    {
+      "type": "route",
+      "uuid": "c3e1b5b5-da71-4d38-97e7-7ca2a346024f"
+    },
+    {
+      "type": "route",
+      "uuid": "3cb55080-b85e-4233-b054-22193b932935"
+    },
+    {
+      "type": "route",
+      "uuid": "2be2c824-681d-4175-99fb-70196c54e9d3"
+    },
+    {
+      "type": "route",
+      "uuid": "ba3ff1ad-3460-4ca8-a500-7a94efc68b0f"
+    }
+  ]
+}
