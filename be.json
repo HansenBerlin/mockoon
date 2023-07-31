@@ -124,7 +124,7 @@
         },
         {
           "uuid": "295268e8-df8a-4090-a19e-07bffd7e35bf",
-          "body": "{\n\"enforceProtectionClassification\": false,\n    \"commands\": [\n        {\n            \"name\": \"Sehr Vertraulich\",\n            \"command\": \"!highConfidental\",\n            \"default\": true\n        },\n        {\n            \"name\": \"Vertraulich\",\n            \"command\": \"!confidential\",\n            \"default\": false\n        },\n        {\n            \"name\": \"Datenschutzkonform\",\n            \"command\": \"!verySecure\",\n            \"default\": false\n        }\n    ],\n    \"xHeaderName\": \"X-TBoneUserCommand\"\n}",
+          "body": "{\n\"enforceProtectionClassification\": false,\n    \"commands\": [\n        {\n            \"name\": \"Sehr Vertraulich\",\n            \"command\": \"#highConfidental\",\n            \"default\": true\n        },\n        {\n            \"name\": \"Vertraulich\",\n            \"command\": \"#confidential\",\n            \"default\": false\n        },\n        {\n            \"name\": \"Datenschutzkonform\",\n            \"command\": \"#verySecure\",\n            \"default\": false\n        }\n    ],\n    \"xHeaderName\": \"X-TBoneUserCommand\"\n}",
           "latency": 50,
           "statusCode": 200,
           "label": " (copy)",
